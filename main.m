@@ -1,23 +1,21 @@
 %% Genetic Algorithm Optimization
 % created by: Gino Bertollucci Colherinhas 08/2016
-% Algoritmo genético baseado em codificação real.
-% 4 exemplos de otimização: hadel_function.m, simple_function.m,
-% eason_function, sphere_function;
+% Genetic optimization based on floating points.
 
-%% Estratégias evolutivas utilizadas:
-% Seleção: Roullete-Wheel; 
+%% Used evolutionary strategies:
+% Selection: Roullete-Wheel; 
 % Crossover: BLX-alpha.
-% Elistismo e dizimação simples.
+% Deterministic elistism and decimation.
 
 clc; clear; clf; close all; addpath fix examples
 
-%% Selecionando a função a ser otimizada
+%% Selecting the function to be optimized
 
-[filename] = uigetfile('examples\*.m','Selecione alguma função para ser otimizada.');
+[filename] = uigetfile('examples\*.m','Select the function to be optimized');
 if isequal(filename,0)
-    error('Selecione alguma função para ser otimizada.')
+    error('Select the function to be optimized')
 else
-    disp(['A função selecionada para a otimização foi: ', fullfile(filename)])
+    disp(['The selected function to be optimized was: ', fullfile(filename)])
     fit_function = str2func(filename(1:end-2));
     [bounds,~]=fit_function(ones(1e6,1));
 end
@@ -31,7 +29,7 @@ p_elit = 0.02;  % Elitism probability
 p_m = 0.02;     % Mutation probability
 p_c = 0.6;      % Crossover probability
     
-%% Lower and Upper bounds (L_1, L_2, ..., L_N/ U_1, U_2, ..., U_N):
+%% Lower and Upper limits (L_1, L_2, ..., L_N/ U_1, U_2, ..., U_N):
 
 CromLim = bounds;
    
@@ -66,11 +64,10 @@ disp(' ')
 fprintf('Para as entradas: f(')
 fprintf('[%4.4f]',fittest(1:end-1))
 fprintf(')')
-fprintf('\nO valor ótimo encontrado foi: f = %4.4f',fittest(end))
+fprintf('\nO valor Ã³timo encontrado foi: f = %4.4f',fittest(end))
 disp(' ')
 
 %% Results Analysis
-
 % Optimization curve:
 figure(1)
 plot(1:i,melhor(1:i)./max(melhor(1:i)),'-ks','LineWidth',1,'MarkerEdgeColor','k','MarkerFaceColor','w','MarkerSize',5.5); hold on    
