@@ -1,5 +1,6 @@
 %% Genetic Algorithm Optimization
 % created by: Gino Bertollucci Colherinhas 08/2016
+% updated on: 23/10/2019
 % Genetic optimization based on floating points.
 
 %% Used evolutionary strategies:
