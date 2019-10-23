@@ -13,5 +13,6 @@ When main.m file is running will ask for insert a .m function to be minimized. T
 
 By default the GA toolbox minimizes the "xxxx_function" function (defined as "y") for specific lower and upper limits (L_1, L_2, ... and U_1, U_2, ...). To maximize just define (1/y). GA toolbox identifies automatically the bound vector size defined in the vector bounds = [L_1 U_1; L_2 U_2; L_3 U_3].
 
-## Results
+## Results & post-processor
 When optimization ends, the elapsed time (in seconds) and the optimum results are shown.
+An optimization curve is also created showing the evolution of the optimal result and the mean chromosomes.
