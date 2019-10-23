@@ -1,4 +1,5 @@
 %% Fitness Function
+% this function reads the fitness function
 % pop: population to be coded
 % INPUTS: entries
 % OUTPUTS: descedent of the generation
